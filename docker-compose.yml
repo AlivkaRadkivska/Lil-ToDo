@@ -1,0 +1,8 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - 5432:5432 #localy
+    environment:
+      - POSTGRES_DB=lil-todo
+      - POSTGRES_HOST_AUTH_METHOD=trust
