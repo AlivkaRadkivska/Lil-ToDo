@@ -9,7 +9,7 @@ export function SearchForm({ prevSearch }: SearchFormPropsT) {
   const [search, setSearch] = useState(prevSearch ? prevSearch : '');
 
   function handleSearch(e: { target: { value: SetStateAction<string> } }) {
-    setSearch(e.target.value);
+    setSearch(e.target.value.toString().trimStart());
   }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -21,11 +21,11 @@ export function SearchForm({ prevSearch }: SearchFormPropsT) {
       className="flex flex-col border-b-2 pb-3 border-slate-800"
       onSubmit={handleSubmit}
     >
-      <p className="p-1 self-start text-slate-800 font-bold">Searching:</p>
+      <p className="p-1 self-start text-slate-900 font-bold">Searching:</p>
       <input type="text" name="priorityOrder" value="desc" readOnly hidden />
       <input type="text" name="status" value="all" readOnly hidden />
       <div className="flex min-w-max w-full items-center">
-        <label className="p-2">
+        <label className="p-2 w-full">
           <input
             className="text-black w-full p-1 pl-2 m-0 outline-none border-none rounded"
             type="text"
@@ -35,7 +35,11 @@ export function SearchForm({ prevSearch }: SearchFormPropsT) {
             onChange={handleSearch}
           />
         </label>
-        <input type="submit" value="🔍" className="cursor-pointer p-1" />
+        <input
+          type="submit"
+          value="⌕"
+          className="cursor-pointer p-1 text-3xl text-white"
+        />
       </div>
     </form>
   );

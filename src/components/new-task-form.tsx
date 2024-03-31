@@ -4,9 +4,10 @@ import { Button } from './button';
 import { useState } from 'react';
 import { useFormState } from 'react-dom';
 import { addTask } from '@/db/task-actions';
+import { ErrString } from './error-string';
 
 export function NewTaskForm() {
-  const [_formState, submit] = useFormState(addTask, { message: [] });
+  const [formState, submit] = useFormState(addTask, { message: {} });
   const [priorityStars, setStars] = useState(3);
   const [taskName, setTaskName] = useState('');
 
@@ -21,7 +22,7 @@ export function NewTaskForm() {
       action={submit}
       onSubmit={handleSubmit}
     >
-      <p className="p-1 text-slate-800 font-bold">New task:</p>
+      <p className="p-1 text-slate-900 font-bold">New task:</p>
       <label className="p-2">
         Task name:
         <input
@@ -34,6 +35,9 @@ export function NewTaskForm() {
           required
         />
       </label>
+      {formState.message.name && (
+        <ErrString>{formState.message.name}</ErrString>
+      )}
       <div className="flex p-2 gap-5 w-full min-w-max">
         <p>Priority:</p>
         <input
@@ -53,6 +57,9 @@ export function NewTaskForm() {
           onChange={(new_rating) => setStars(new_rating)}
         />
       </div>
+      {formState.message.priority && (
+        <ErrString>{formState.message.priority}</ErrString>
+      )}
       <Button>
         <input
           type="submit"
@@ -61,6 +68,9 @@ export function NewTaskForm() {
           className="cursor-pointer"
         />
       </Button>
+      {formState.message.other && (
+        <ErrString>{formState.message.other}</ErrString>
+      )}
     </form>
   );
 }

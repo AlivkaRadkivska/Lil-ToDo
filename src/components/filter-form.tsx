@@ -22,8 +22,8 @@ export function FilterForm({
 
   return (
     <form className="flex flex-col border-b-2 pb-3 pt-3 border-slate-800 items-start">
-      <p className="p-1 self-start text-slate-800 font-bold">Filtering:</p>
-      <label className="p-2">
+      <p className="p-1 self-start text-slate-900 font-bold">Filtering:</p>
+      <label className="p-2 w-full">
         Select by status
         <select
           className="text-black w-full p-2 outline-none border-none rounded"
@@ -40,7 +40,7 @@ export function FilterForm({
       </label>
       <div className="p-2 w-full">
         Sort by priority:
-        <div className="flex gap-2">
+        <div className="flex gap-2 w-full justify-around">
           {priorityOptions.map((option) => (
             <label className="w-max" key={option.value}>
               <input

@@ -3,13 +3,14 @@ import { deleteTask } from '@/db/task-actions';
 import { TaskT } from '@/types/task';
 import { useFormState } from 'react-dom';
 import { Button } from './button';
+import { ErrString } from './error-string';
 
 interface DeleteTaskFormT {
   task: TaskT;
 }
 
 export function DeleteTaskForm({ task }: DeleteTaskFormT) {
-  const [_formState, submit] = useFormState(deleteTask, { message: [] });
+  const [formState, submit] = useFormState(deleteTask, { message: '' });
 
   return (
     <form action={submit} className="flex flex-col items-center">
@@ -23,6 +24,7 @@ export function DeleteTaskForm({ task }: DeleteTaskFormT) {
           className="cursor-pointer"
         />
       </Button>
+      {formState.message && <ErrString>{formState.message}</ErrString>}
     </form>
   );
 }
