@@ -6,7 +6,6 @@ const font = Comfortaa({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "Lil' ToDo App",
-  description: 'Jr. Full Stack Test',
 };
 
 export default function RootLayout({
