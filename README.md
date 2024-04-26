@@ -36,7 +36,7 @@ Open [http://localhost:6006](http://localhost:6006) with your browser to see the
 
 ## Storybook Web
 
-You can also view the Storybook web version by visiting [https://lil-to-do-storybook-l91ot3aok-alivkaradkivskas-projects.vercel.app/](https://lil-to-do-storybook-l91ot3aok-alivkaradkivskas-projects.vercel.app/).
+You can also view the Storybook web version by visiting [https://lil-to-do-storybook.vercel.app/](https://lil-to-do-storybook.vercel.app/).
 
 ## License
 
