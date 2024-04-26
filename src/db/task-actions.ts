@@ -30,6 +30,11 @@ export async function getTasks(filterParams?: FilterParamsT): Promise<TaskT[]> {
     orderBy,
   });
 }
+export async function getTask(id: string): Promise<TaskT[]> {
+  return await db.task.findMany({
+    where: { id },
+  });
+}
 
 const addTaskSchema = z.object({
   name: z.string().min(3),
@@ -38,7 +43,7 @@ const addTaskSchema = z.object({
 
 export async function addTask(
   _state: { message: { other?: string; name?: string; priority?: string } },
-  payload: FormData
+  payload: FormData,
 ): Promise<{ message: { other?: string; name?: string; priority?: string } }> {
   const data = {
     name: payload.get('name') as string,
@@ -64,7 +69,7 @@ export async function addTask(
 
 export async function updateTaskStatus(
   _state: { message: string },
-  payload: FormData
+  payload: FormData,
 ): Promise<{ message: string }> {
   const id = payload.get('id') as string;
   const status = (payload.get('status') as string) === 'true';
@@ -78,7 +83,7 @@ export async function updateTaskStatus(
 
 export async function deleteTask(
   _state: { message: string },
-  payload: FormData
+  payload: FormData,
 ): Promise<{ message: string }> {
   const id = payload.get('id') as string;
 
