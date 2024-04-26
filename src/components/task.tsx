@@ -10,7 +10,7 @@ interface TaskProps {
 
 export function Task({ task }: TaskProps) {
   return (
-    <div className="w-full flex flex-col bg-slate-500 p-3 rounded">
+    <div className="w-full flex flex-col bg-slate-500 p-3 rounded text-white">
       <input className="hidden" type="text" value={task.id} readOnly />
       <div className="w-full flex justify-between">
         <ReactStars
