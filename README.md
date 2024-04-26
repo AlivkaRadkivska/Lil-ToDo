@@ -18,9 +18,25 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Storybook Local
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This project uses Storybook to develop UI components in isolation. You can start Storybook by running:
+
+```bash
+npm run storybook
+# or
+yarn storybook
+# or
+pnpm storybook
+# or
+bun storybook
+```
+
+Open [http://localhost:6006](http://localhost:6006) with your browser to see the result.
+
+## Storybook Web
+
+You can also view the Storybook web version by visiting [https://lil-to-do-storybook-l91ot3aok-alivkaradkivskas-projects.vercel.app/](https://lil-to-do-storybook-l91ot3aok-alivkaradkivskas-projects.vercel.app/).
 
 ## License
 
