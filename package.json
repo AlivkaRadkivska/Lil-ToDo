@@ -10,7 +10,8 @@
     "db:migrate": "npx prisma migrate dev",
     "vercel-build": "prisma generate && prisma migrate deploy && next build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "serve-storybook": "serve storybook-static"
   },
   "dependencies": {
     "@prisma/client": "^5.11.0",
